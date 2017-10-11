@@ -1,0 +1,58 @@
+.title, .options {
+  margin: 0 auto;
+  width: 50%;
+  text-align: center;
+}
+
+.options {
+  padding-bottom: 30px;
+}
+
+h1 {
+  font-size: 2.5em;
+  font-style: italic;
+  color: white; /* #4d4d4d; */
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+button {
+  font-weight: bold;
+  color: #757575;
+  background-color: #F1F1F1;
+  height: 40px;
+  width: 100px;
+  border: 1px solid #F2F2F2;
+  border-radius: 2px;
+  margin-left: 5px;
+}
+
+button:hover {
+  color: #000000;
+  border-color: #C7C7C7;
+}
+
+.container {
+  width: 640px;
+  height: 640px;
+  margin: 0 auto;
+  outline: 2px dashed #C7C7C7;
+  padding: 0;
+}
+
+/* This is individual field in the grid */
+.sketch-field {
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  display: block;
+  float: left;
+}
+
+.default-field-size {
+  width: 40px;
+  height: 40px;
+}
+
+.black {
+  background-color: black;
+}
