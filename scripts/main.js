@@ -5,8 +5,29 @@ function getNumber(candidate) {
 }
 
 
+function blackFields(field) {
+  field.css('background-color', 'rgba(1,1,1,1)');
+}
+
+
+function randomFields(field) {
+  let hexColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+  field.css('background-color', hexColor);
+}
+
+function gradientFields(field) {
+  let color = field.css('background-color');
+  console.log(color);
+  if (color === 'rgba(0, 0, 0, 0)') {
+    field.css('background-color', 'black');
+    field.css('opacity', '0.1');
+  } else {
+    field.css('opacity', '+=0.1');
+  };
+}
+
+
 $(document).ready(function() {
-  // jQuery code
 
   const defaultSquaresPerSide = 16;
   let defaultGridSize = Math.pow(defaultSquaresPerSide, 2);
@@ -28,8 +49,27 @@ $(document).ready(function() {
   };
 
 
-  $('.container').on('mouseenter', 'div', function() {
-    $(this).css('background-color', 'rgba(1,1,1,1)');
+  let brush = blackFields;
+
+
+  $('button[name=random]').on('click', function() {
+    brush = randomFields;
+  });
+
+
+  $('button[name=black]').on('click', function() {
+    brush = blackFields;
+  });
+
+
+  $('button[name=gradient]').on('click', function() {
+    brush = gradientFields;
+  });
+
+
+  //$('.container').on('mouseenter', 'div', {div : $(this)}, blackFields);
+  $('.container').on('mouseenter', 'div', function () {
+    brush($(this));
   });
 
 
