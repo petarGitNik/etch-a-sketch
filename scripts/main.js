@@ -28,18 +28,15 @@ $(document).ready(function() {
   };
 
 
-  $('.sketch-field').on('mouseenter', function() {
-    $(this).addClass('black');
+  $('.container').on('mouseenter', 'div', function() {
+    $(this).css('background-color', 'rgba(1,1,1,1)');
   });
 
 
-  $('button[name=clear]').on('click', function() {
+  $('button[name=size]').on('click', function() {
     const message = 'How many squares per side do you want?';
-
     let squaresPerSide = prompt(message, defaultSquaresPerSide);
 
-    // Use either height or width, it does not matter since the grid
-    // is a square
     let fieldSize = (100 / squaresPerSide) + '%';
     $('.container').empty();
 
@@ -52,6 +49,11 @@ $(document).ready(function() {
                           });
       $('.container').append(sketchField);
     };
+  });
+
+
+  $('button[name=clear]').on('click', function() {
+    $('.sketch-field').css('background-color', 'rgba(0,0,0,0)');
   });
 
 
